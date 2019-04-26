@@ -14,6 +14,7 @@ export class DetailPage implements OnInit {
   private note:Notes;
 
   constructor(private route: ActivatedRoute, private notesService: NotesService, private navCtrl: NavController) { 
+    //placholder until actual note is entered
     this.note = {
       id: '',
       title: '',
@@ -22,8 +23,10 @@ export class DetailPage implements OnInit {
   }
 
   ngOnInit() {
+    //gets note id from the url
     let noteId = this.route.snapshot.paramMap.get('id');
 
+    //checks if data has loaded before getting the note
     if(this.notesService.loaded)
     {
       this.note = this.notesService.getNote(noteId)
@@ -35,12 +38,14 @@ export class DetailPage implements OnInit {
     }
   }
 
-  updateNote(){
-    this.notesService.save();
-  }
-
   deleteNote(){
     this.notesService.deleteNote(this.note);
     this.navCtrl.navigateBack('/notes');
   }
 }
+
+
+  updateNote(){
+    this.notesService.save();
+  }
+
