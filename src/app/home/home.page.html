@@ -4,7 +4,7 @@
       Notepad
     </ion-title>
     <ion-buttons slot="end">
-      <ion-button>
+      <ion-button (click)="addNote()">
         <ion-icon slot="icon-only" name="add-circle"></ion-icon>
       </ion-button>
     </ion-buttons>
@@ -13,8 +13,8 @@
 
 <ion-content color="secondary">
   <ion-list>
-    <ion-item button detail color="dark" >
-      <ion-label>NoteName</ion-label>
+    <ion-item button detail color="dark" *ngFor="let note of notesService.notes" [href]="'/notes/' + note.id" routerDirection="forward">
+      <ion-label>{{Note.title}}</ion-label>
     </ion-item>
   </ion-list>
 </ion-content>
