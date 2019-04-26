@@ -45,7 +45,7 @@ export class DetailPage implements OnInit {
 }
 
 
-  updateNote(){
+  updateNote();{
     this.notesService.save();
   }
 

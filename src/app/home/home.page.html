@@ -13,7 +13,7 @@
 
 <ion-content color="secondary">
   <ion-list>
-    <ion-item button detail color="dark" *ngFor="let note of notesService.notes" [href]="'/notes/' + note.id" routerDirection="forward">
+    <ion-item button detail *ngFor="let note of notesService.notes" [href]="'/notes/' + note.id" routerDirection="forward">
       <ion-label>{{Note.title}}</ion-label>
     </ion-item>
   </ion-list>

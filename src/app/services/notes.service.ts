@@ -29,21 +29,21 @@ export class NotesService {
     });
 }
 }
-save(): void{
+save(); void{
   //saves the current array of notes
-  this.storage.set('notes', this.notes);
+  this:Storage.set('notes', this.notes),
 }
 
-getNote(id): Notes {
+getNote(id); Notes ;{
   //gets the note that has the same id as the one passedin
   return this.notes.find(note => note.id === id);
 }
 //delete note function
-deleteNote(note): void {
+deleteNote(note); void {
   //finds index in the array in the note that was passed through
-  let index = this.notes.indexOf(note);
+  let index = this.notes.indexOf(note),
   //deltes this element of the array and saves after 
-  if(index > -1){
+  if(index, > -1,);{
     this.notes.splice(index, 1);
     this.save();
   }
@@ -56,8 +56,8 @@ createNote(title); void {
     id: id.toString(),
     title: title,
     body: ''
-  });
-  this.save();
+  }),
+  this.save(),
 }
 
 
