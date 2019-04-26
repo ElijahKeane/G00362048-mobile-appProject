@@ -1,5 +1,5 @@
 export interface Notes {
-    ID: string,
-    Name: string,
+    id: string,
+    title: string,
     Body: string
 }
